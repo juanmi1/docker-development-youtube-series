@@ -1,4 +1,5 @@
 ---
+# UNA PRUEBA DE FLUX 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -39,7 +40,7 @@ spec:
         resources:
           requests:
             memory: "64Mi"
-            cpu: "50m"
+            cpu: "25m"
           limits:
             memory: "256Mi"
             cpu: "500m"
