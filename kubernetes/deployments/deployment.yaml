@@ -3,17 +3,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: despliegue-ejemplo
+  name: example-deployment
   labels:
-    app: app-ejemplo
+    app: example-app
     test: test
   annotations:
-    fluxcd.io/tag.app-ejemplo: semver:~1.0
+    fluxcd.io/tag.example-app: semver:~1.0
     fluxcd.io/automated: 'true'
 spec:
   selector:
     matchLabels:
-      app: app-ejemplo
+      app: example-app
   replicas: 2
   strategy:
     type: RollingUpdate
@@ -23,10 +23,10 @@ spec:
   template:
     metadata:
       labels:
-        app: app-ejemplo
+        app: example-app
     spec:
       containers:
-      - name: app-ejemplo
+      - name: example-app
         image: aimvector/python:1.0.4
         imagePullPolicy: Always
         ports:
